@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <script>
+      function score()
+      {
+        let one = parseInt(document.querySelector('#q1').value);
+        let two = parseInt(document.querySelector('#q2').value);
+        let three = parseInt(document.querySelector('#q3').value);
+        let four = parseInt(document.querySelector('#q4').value);
+        let five = parseInt(document.querySelector('#q5').value);
+        let six = parseInt(document.querySelector('#q6').value);
+        let convert = ((one + two + three + four + five + six)/54)*50;
+        let mcscore = document.querySelector('#a').value;
+        let celsius = parseInt((mcscore/90) * 100);
+        let final = convert + celsius
+        if (final >= 63){
+          document.querySelector('#hi').innerHTML = 5
+        }
+        if (final >= 52 && final < 63){
+          document.querySelector('#hi').innerHTML = 4
+        }
+        if (final >= 41 && final < 52){
+          document.querySelector('#hi').innerHTML = 3
+        }
+        if (final >= 34 && final < 41){
+          document.querySelector('#hi').innerHTML = 2
+        }
+        if (final < 34){
+          document.querySelector('#hi').innerHTML = 1
+        }
+      }
+    </script>
+    <title>score calculator</title>
+    <br>
+    <h1>AP CALCULUS AB SCORE CALCULATOR</h1>
+      
+    <style>
+      h1 {
+        text-align: center; color: blue; font-size: 52px;
+      }
+      body{
+        background-color: pink; text-align: center;
+      }
+
+</style>
+    <script src="anything.js"></script>
+  </head>
+  <body>
+    
+    <h2> MULTIPLE CHOICE SECTION SCORE </h2>
+    <form oninput="mcscore.value=parseInt(a.value)">0
+      <input type="range" min="0" max="45" id="a" value="40">
+      <output name="mcscore"></output>
+    </form>
+    <h2> FREE RESPONSE SECTION SCORE </h2>
+    question 1:<br>
+    <form oninput="q.value=parseInt(q1.value)">0
+      <input type="range" min="0" max="9" id="q1" value="5">
+      <output name="q"></output>
+    </form>
+    question 2:<br>
+    <form oninput="q.value=parseInt(q2.value)">0
+      <input type="range" min="0" max="9" id="q2" value="5">
+      <output name="q"></output>
+    </form>
+    question 3:<br>
+    <form oninput="q.value=parseInt(q3.value)">0
+      <input type="range" min="0" max="9" id="q3" value="5">
+      <output name="q"></output>
+    </form>
+    question 4:<br>
+    <form oninput="q.value=parseInt(q4.value)">0
+      <input type="range" min="0" max="9" id="q4" value="5">
+      <output name="q"></output>
+    </form>
+    question 5:<br>
+    <form oninput="q.value=parseInt(q5.value)">0
+      <input type="range" min="0" max="9" id="q5" value="5">
+      <output name="q"></output>
+    </form>
+    question 6:<br>
+    <form oninput="q.value=parseInt(q6.value)">0
+      <input type="range" min="0" max="9" id="q6" value="5">
+      <output name="q"></output>
+    </form>
+  <br><br>
+    <button type="button" onclick="score()">Calculate! </button>
+  <br> <br> You got a <p style="font-size:32px;"id = "hi"> <p>
+  </body>
+</html>
